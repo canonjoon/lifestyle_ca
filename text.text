@@ -1,0 +1,11 @@
+http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson
+
+serviceKey=mJyLI50asz7Qv7PlHdjciQEMK2dW7AvSUP07dFSHJeMkzRCSAcnVgramtTjyOYjm%2FZLruxESJUEvW6UBcf6VSA%3D%3D
+        mJyLI50asz7Qv7PlHdjciQEMK2dW7AvSUP07dFSHJeMkzRCSAcnVgramtTjyOYjm/ZLruxESJUEvW6UBcf6VSA==
+pageNo=1
+numOfRows=10
+startCreateDt=20200710
+endCreateDt=20200710
+
+http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=mJyLI50asz7Qv7PlHdjciQEMK2dW7AvSUP07dFSHJeMkzRCSAcnVgramtTjyOYjm%2FZLruxESJUEvW6UBcf6VSA%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20200710&endCreateDt=20200710
+http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=mJyLI50asz7Qv7PlHdjciQEMK2dW7AvSUP07dFSHJeMkzRCSAcnVgramtTjyOYjm%2FZLruxESJUEvW6UBcf6VSA%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20200710&endCreateDt=20200710
