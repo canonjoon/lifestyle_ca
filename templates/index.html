@@ -55,7 +55,8 @@
         <canvas id="isolClearCnt"></canvas>
         <hr>
         <h1> 만명당 발생률</h1>    
-        <canvas id="qurRate"></canvas>
+        <canvas id="qurRate"></canvas>   
+
     </div>
 
     <script>
@@ -69,7 +70,7 @@
         ]    
         // 지역별 누적 사망자 수 그래프
         var ctx_death = document.getElementById('deathCnt').getContext('2d');
-
+        
         var death_Chart = new Chart(ctx_death, {
             "type":"doughnut",
             "data":{
@@ -128,6 +129,9 @@
             }
         });
 
+
+        //확인용
+        
 
 
     </script>
