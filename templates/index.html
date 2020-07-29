@@ -6,15 +6,18 @@
     <title>코로나 현황 </title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <style>
-        div {
-            text-align: center;
-        }
+        
+       
         div > h1 {
             text-align: center;
         }
         #chartBox {
-            width: 80%;
+            text-align: center;   
+            width: 80%;         
             margin: auto;
+            
+            min-width: 300px;    
+            
         }
 
     </style>
@@ -44,9 +47,9 @@
     {% endfor %}
     <hr> -->
 
-    <div id="chartBox" width="200">
+    <div id="chartBox" >
         <h1>지역별 사망자 누적 수</h1>    
-        <canvas id="deathCnt"></canvas>
+        <canvas id="deathCnt" ></canvas>
         <hr>
         <h1>전일대비 증감 수 - 확진자</h1>    
         <canvas id="incDec"></canvas>
@@ -75,11 +78,24 @@
             "type":"doughnut",
             "data":{
                 labels:[{% for d in data %}  "{{d.gubun}}",{% endfor %}],
+                    
+                
                 datasets:[{
                     label:"지역별 사망자 누적수",
                     data:[ {% for d in data %} {{d.deathCnt}}, {% endfor %}],
-                    backgroundColor:colorlist //["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205,86)"]
+                    backgroundColor:colorlist, //["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205,86)"]
+                    hoverBorderWidth:5,
                 }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                        labels: {
+                            boxWidth:20,
+                            padding:3,
+                            fontSize:8,
+                    }
+                }
             }
         });
 
@@ -95,6 +111,16 @@
                     data:[ {% for d in data %} {{d.incDec}}, {% endfor %}],
                     backgroundColor:colorlist //["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205,86)"]
                 }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                        labels: {
+                            boxWidth:20,
+                            padding:3,
+                            fontSize:8,
+                    }
+                }
             }
         });
 
@@ -111,6 +137,16 @@
                     data:[ {% for d in data %} {{d.isolClearCnt}}, {% endfor %}],
                     backgroundColor:colorlist //["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205,86)"]
                 }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                        labels: {
+                            boxWidth:20,
+                            padding:3,
+                            fontSize:8,
+                    }
+                }
             }
         });
 
@@ -126,12 +162,19 @@
                     data:[ {% for d in data %} {{d.qurRate|float}}, {% endfor %}],
                     backgroundColor:colorlist //["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205,86)"]
                 }]
+            },
+            options: {
+                legend: {
+                    display: true,
+                        labels: {
+                            boxWidth:20,
+                            padding:3,
+                            fontSize:8,
+                    }
+                }
             }
         });
 
-
-        //확인용
-        
 
 
     </script>
