@@ -2,6 +2,7 @@ import requests
 import xmltodict
 import json
 
+#깃허브 푸시는 origin2 로 작업진행.
 
 #http://apis.data.go.kr/1360000/LivingWthrIdxService/getUVIdx
 # serviceKey=mJyLI50asz7Qv7PlHdjciQEMK2dW7AvSUP07dFSHJeMkzRCSAcnVgramtTjyOYjm%2FZLruxESJUEvW6UBcf6VSA%3D%3D 디코딩전
