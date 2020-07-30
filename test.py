@@ -3,8 +3,8 @@ import corona_data
 
 #20200728-오늘
 now = date.today()
-now_str=now.strftime("%Y%m%d")
-#print(now.strftime("%Y%m%d"))
+now_str=now.strftime("%Y%m%d%H")
+print(now.strftime("%Y%m%d%H"))
 
 data = corona_data.get_corona_data('20200729','20200729')
 #없으면 어제 날짜로 요청.

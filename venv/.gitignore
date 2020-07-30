@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/python,flask,virtualenv
-# Edit at https://www.toptal.com/developers/gitignore?templates=python,flask,virtualenv
+# Created by https://www.toptal.com/developers/gitignore/api/flask
+# Edit at https://www.toptal.com/developers/gitignore?templates=flask
 
 ### Flask ###
 instance/*
@@ -60,7 +60,6 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-pytestdebug.log
 
 # Translations
 *.mo
@@ -80,7 +79,6 @@ instance/
 
 # Sphinx documentation
 docs/_build/
-doc/_build/
 
 # PyBuilder
 target/
@@ -113,13 +111,13 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+#.env
 #.venv
-env/
+#env/
 #venv/
-ENV/
-env.bak/
-venv.bak/
+#ENV/
+#env.bak/
+#venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -142,75 +140,4 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
-### Python ###
-# Byte-compiled / optimized / DLL files
-
-# C extensions
-
-# Distribution / packaging
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-
-# Installer logs
-
-# Unit test / coverage reports
-
-# Translations
-
-# Django stuff:
-
-# Flask stuff:
-
-# Scrapy stuff:
-
-# Sphinx documentation
-
-# PyBuilder
-
-# Jupyter Notebook
-
-# IPython
-
-# pyenv
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-
-# Celery stuff
-
-# SageMath parsed files
-
-# Environments
-
-# Spyder project settings
-
-# Rope project settings
-
-# mkdocs documentation
-
-# mypy
-
-# Pyre type checker
-
-# pytype static type analyzer
-
-### VirtualEnv ###
-# Virtualenv
-# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
-[Bb]in
-[Ii]nclude
-[Ll]ib
-[Ll]ib64
-[Ll]ocal
-[Ss]cripts
-pyvenv.cfg
-pip-selfcheck.json
-
-# End of https://www.toptal.com/developers/gitignore/api/python,flask,virtualenv
+# End of https://www.toptal.com/developers/gitignore/api/flask
