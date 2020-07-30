@@ -3,20 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/index.css">
     <title>생활 지수 </title>
    
-    
 </head>
 <body>
      <h1>자외선 지수</h1>
      
      <h2>{{now}}</h2>
-        오늘 : {{data[0]}} / {{uv_list[0]}}<hr>
-        내일 : {{data[1]}} / {{uv_list[1]}} <hr>
-        모레 : {{data[2]}} / {{uv_list[2]}} <hr>
+     
+     <div id="legend">
+        <div class="red">10점 이상 : 위험 </div><b>
+        <div class="orange">7점 이상 : 아주 높음</div> <b>
+        <div class="yellow">5점 이상 : 높음</div> <b>
+        <div class="green">4점 이하 : 안전함</div> <br><p>
+    </div>
 
+
+     <div id="today">   오늘 : {{data[0]}} / {{uv_list[0]}} <hr> </div>
+     <div id="tomorow">   내일 : {{data[1]}} / {{uv_list[1]}} <hr> </div>  
+     <div id="daytomorow">   모레 : {{data[2]}} / {{uv_list[2]}} <hr> </div>   
         
-        
+<script>
+    if ("{{uv_list[0]}}">10) {
+        document.getElementById('today').style.color='red'; 
+    }else if ("{{uv_list[0]}}">=7) {
+        document.getElementById('today').style.color='orange';
+    }else if ("{{uv_list[0]}}">=5) {
+        document.getElementById('today').style.color='yellow';
+    }else {
+        document.getElementById('today').style.color='lightgreen';
+    }
+    
+    if ("{{uv_list[1]}}">10) {
+        document.getElementById('tomorow').style.color='red';
+    }else if ("{{uv_list[1]}}">=7) {
+        document.getElementById('tomorow').style.color='orange';
+    }else if ("{{uv_list[1]}}">=5) {
+        document.getElementById('tomorow').style.color='yellow';
+    }else {
+        document.getElementById('tomorow').style.color='lightgreen';
+    }
+
+    if ("{{uv_list[2]}}">10) {
+        document.getElementById('daytomorow').style.color='red';
+    }else if ("{{uv_list[2]}}">=7) {
+        document.getElementById('daytomorow').style.color='orange';
+    }else if ("{{uv_list[2]}}">=5) {
+        document.getElementById('daytomorow').style.color='yellow';
+    }else {
+        document.getElementById('daytomorow').style.color='lightgreen';
+    }
+    
+</script>
         
         
 

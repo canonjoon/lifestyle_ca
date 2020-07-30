@@ -1,0 +1,34 @@
+
+body {
+    text-align: center;
+    background-color: darkgrey;
+}
+
+
+.red {
+        color: red;
+}
+
+.orange {
+        color: orange;
+}
+
+.yellow {
+        color: yellow;
+}
+
+.green {
+        color: lightgreen;
+}
+
+#legend {
+        width: 60%;
+        margin: auto;
+        background-color: darkgrey;
+        text-align: center;
+}
+
+#today, #tomorow,#daytomorow {
+    width: 30%;
+    margin: auto;
+}
