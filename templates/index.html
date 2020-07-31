@@ -8,52 +8,118 @@
    
 </head>
 <body>
-     <h1>자외선 지수</h1>
+     <h1>{{city}} 자외선 지수 </h1><h2>{{now}}</h2>
+    
+     <form action="\" method="get" class="name">
+        <select name="city" style="width: 200px; margin:10px;">
+            <option value="Seoul" > 도시를 선택하세요
+            <option value="Seoul" > 서울
+            <option value="Busan" > 부산
+            <option value="Daejeon"> 대전    
+            <option value="Gwangju"> 광주
+            <option value="Jeju"> 제주
+        </select>
+            <button type="submit">도시선택</button>
+     </form>
      
-     <h2>{{now}}</h2>
-     
-     <div id="legend">
-        <div class="red">10점 이상 : 위험 </div><b>
-        <div class="orange">7점 이상 : 아주 높음</div> <b>
-        <div class="yellow">5점 이상 : 높음</div> <b>
-        <div class="green">4점 이하 : 안전함</div> <br><p>
-    </div>
+        <table id="legend" border="2">
+          <div id="v">
+            <tr class="v">
+                <th>알림 내용</th>
+                <th>자외선 지수 기준</th>
+                <th>오늘</th>  
+                <th>내일</th> 
+                <th>모레</th>          
+            </tr>
 
+            <tr>
+                <td  class="red">  위험 </td>
+                <td>10점 이상</td> 
+                <td rowspan="2"><div id="today">{{data[0]}} </div></td>
+                <td rowspan="2"><div id="tomorow">{{data[1]}} </div></td>
+                <td rowspan="2"><div id="daytomorow">{{data[2]}} </div></td>            
+            </tr>
 
+            <tr>
+                <td  class="orange"> 아주 높음 </td>
+                <td>7점 이상</td>
+                        
+            </tr>
+
+            <tr>
+                <td  class="yellow">높음</td>
+                <td>5점 이상</td>
+                <td rowspan="2"><div id="todayt">{{uv_list[0]}} </div></td>
+                <td rowspan="2"><div id="tomorowt">{{uv_list[1]}} </div></td>
+                <td rowspan="2"><div id="daytomorowt">{{uv_list[2]}} </div></td>
+            </tr>
+
+            <tr>
+                <td  class="green">안전함 </td>
+                <td>4점 이하</td>            
+            </tr>
+          </div>  
+        </table>
+
+        <div id="today_text" >오늘은......</div>
+
+    <!--
      <div id="today">   오늘 : {{data[0]}} / {{uv_list[0]}} <hr> </div>
      <div id="tomorow">   내일 : {{data[1]}} / {{uv_list[1]}} <hr> </div>  
      <div id="daytomorow">   모레 : {{data[2]}} / {{uv_list[2]}} <hr> </div>   
-        
+     -->       
+
 <script>
-    if ("{{uv_list[0]}}">10) {
-        document.getElementById('today').style.color='red'; 
-    }else if ("{{uv_list[0]}}">=7) {
-        document.getElementById('today').style.color='orange';
-    }else if ("{{uv_list[0]}}">=5) {
-        document.getElementById('today').style.color='yellow';
+    //자외선 지수확인하여 글자색 변경 조건문.
+    if ("{{data[0]}}"<=4) {
+        document.getElementById('today').style.color='darkseagreen';
+        document.getElementById('todayt').style.color='darkseagreen';
+        document.getElementById('today_text').innerText="오늘은 외출을 해도 괜찮습니다.";  
+    } else if (5<= "{{data[0]}}"<=6) {
+        document.getElementById('today').style.color='rgb(201, 188, 11)'; 
+        document.getElementById('todayt').style.color='rgb(201, 188, 11)'; 
+        document.getElementById('today_text').innerText="오늘은 선크림을 바르고 나가세요.";  
+    }else if (7<="{{data[0]}}"<=9) {
+        document.getElementById('today').style.color='orange'; 
+        document.getElementById('todayt').style.color='orange';
+        document.getElementById('today_text').innerText="오늘은 외출을 자제 하세요.";  
     }else {
-        document.getElementById('today').style.color='lightgreen';
+        document.getElementById('today').style.color='red';
+        document.getElementById('todayt').style.color='red';
+        document.getElementById('today_text').innerText="오늘은 위험하니 외출하지 마세요.";  
     }
     
-    if ("{{uv_list[1]}}">10) {
-        document.getElementById('tomorow').style.color='red';
-    }else if ("{{uv_list[1]}}">=7) {
+    if ("{{data[1]}}"<=4) {
+        document.getElementById('tomorow').style.color='darkseagreen'; 
+        document.getElementById('tomorowt').style.color='darkseagreen'; 
+    } else if (5<= "{{data[1]}}"<=6) {
+        document.getElementById('tomorow').style.color='rgb(201, 188, 11)'; 
+        document.getElementById('tomorowt').style.color='rgb(201, 188, 11)'; 
+    }else if (7<="{{data[1]}}"<=9) {
         document.getElementById('tomorow').style.color='orange';
-    }else if ("{{uv_list[1]}}">=5) {
-        document.getElementById('tomorow').style.color='yellow';
+        document.getElementById('tomorowt').style.color='orange'; 
     }else {
-        document.getElementById('tomorow').style.color='lightgreen';
+        document.getElementById('tomorow').style.color='red';
+        document.getElementById('tomorowt').style.color='red';
+    }
+    
+
+
+
+    if ("{{data[2]}}"<=4) {
+        document.getElementById('daytomorow').style.color='darkseagreen'; 
+        document.getElementById('daytomorowt').style.color='darkseagreen'; 
+    }  else if (5<= "{{data[2]}}"<=6) {
+        document.getElementById('daytomorow').style.color='rgb(201, 188, 11)'; 
+        document.getElementById('daytomorowt').style.color='rgb(201, 188, 11)'; 
+    }else if (7<="{{data[2]}}"<=9) {
+        document.getElementById('daytomorow').style.color='orange'; 
+        document.getElementById('daytomorowt').style.color='orange'; 
+    }else {
+        document.getElementById('daytomorow').style.color='red';
+        document.getElementById('daytomorowt').style.color='red';
     }
 
-    if ("{{uv_list[2]}}">10) {
-        document.getElementById('daytomorow').style.color='red';
-    }else if ("{{uv_list[2]}}">=7) {
-        document.getElementById('daytomorow').style.color='orange';
-    }else if ("{{uv_list[2]}}">=5) {
-        document.getElementById('daytomorow').style.color='yellow';
-    }else {
-        document.getElementById('daytomorow').style.color='lightgreen';
-    }
     
 </script>
         

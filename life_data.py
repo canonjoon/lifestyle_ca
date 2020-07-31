@@ -27,9 +27,12 @@ def get_uv_data(areaNo,time):
         'time':str(time)+'06',
     }
 
-    res=requests.get(url, params=parms)
-    #print(res.url)
-    #print(res.text)
+    try:
+        res=requests.get(url, params=parms)
+        #print(res.url)
+        #print(res.text)
+    except ValueError:
+        print("데이터 포탈에 연결이 되지 않습니다... 잠시후 시도해 보세요")
 
     #xml to dict
     dict_data =xmltodict.parse(res.text)
@@ -55,5 +58,5 @@ def get_uv_data(areaNo,time):
     return uv_td,uv_tm,uv_dtm
 
 #테스트용
-#if __name__ == "__main__":
-#    print(get_uv_data(2600000000,20200729))
+if __name__ == "__main__":
+    print(get_uv_data(2600000000,20200729))

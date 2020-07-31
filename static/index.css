@@ -1,9 +1,8 @@
 
 body {
     text-align: center;
-    background-color: darkgrey;
+    
 }
-
 
 .red {
         color: red;
@@ -14,21 +13,26 @@ body {
 }
 
 .yellow {
-        color: yellow;
+        color: rgb(201, 188, 11);
 }
 
 .green {
-        color: lightgreen;
+        color: darkseagreen;
 }
 
 #legend {
-        width: 60%;
+        border-style: solid;
+        width: 400px;
         margin: auto;
-        background-color: darkgrey;
-        text-align: center;
+        
 }
 
-#today, #tomorow,#daytomorow {
+#v {
+     border-style: hidden;   
+}
+
+.today, .tomorow,.daytomorow,.todayt, .tomorowt,.daytomorowt {
+       
     width: 30%;
     margin: auto;
 }
