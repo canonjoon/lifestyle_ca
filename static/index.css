@@ -21,14 +21,14 @@ body {
 }
 
 #legend {
-        border-style: solid;
+      
+        border-color: black;
+        border-radius: .4em;
         width: 400px;
+        height: 200px;
         margin: auto;
-        
-}
-
-#v {
-     border-style: hidden;   
+        table-layout: fixed;
+       
 }
 
 .today, .tomorow,.daytomorow,.todayt, .tomorowt,.daytomorowt {

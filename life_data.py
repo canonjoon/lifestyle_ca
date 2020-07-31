@@ -59,4 +59,4 @@ def get_uv_data(areaNo,time):
 
 #테스트용
 if __name__ == "__main__":
-    print(get_uv_data(2600000000,20200729))
+    print(get_uv_data(2600000000,20200801))
