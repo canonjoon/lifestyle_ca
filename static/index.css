@@ -1,0 +1,38 @@
+
+body {
+    text-align: center;
+    
+}
+
+.red {
+        color: red;
+}
+
+.orange {
+        color: orange;
+}
+
+.yellow {
+        color: rgb(201, 188, 11);
+}
+
+.green {
+        color: darkseagreen;
+}
+
+#legend {
+      
+        border-color: black;
+        border-radius: .4em;
+        width: 400px;
+        height: 200px;
+        margin: auto;
+        table-layout: fixed;
+       
+}
+
+.today, .tomorow,.daytomorow,.todayt, .tomorowt,.daytomorowt {
+       
+    width: 30%;
+    margin: auto;
+}
